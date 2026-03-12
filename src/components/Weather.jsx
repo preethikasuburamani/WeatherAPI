@@ -6,7 +6,7 @@ const Weather = () => {
 
     const[city,setCity]=useState("");
     const[weather,setWeather] = useState(null);
-    const [error,setError]= useState(false)
+    const [error,setError]= useState("")
 
 
     // useEffect(async()=>{
@@ -24,12 +24,26 @@ const Weather = () => {
 
     const getWeather = async () => {
 
+    if (!city) return;
+    try{
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ffbcfc95119c6d6b9a1a62ec28310d3d&units=metric`
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data)
+
+    if(data.cod !==200){
+      setError("City not found! Please enter vaild city.")
+      setWeather(null)
+      setCity("")
+      return;
+
+    }
+    
     setWeather(data);
-    setCity()
+    setError("")
+    setCity("")
+    }catch{
+
+    }
  }
     
   return (
@@ -41,29 +55,21 @@ const Weather = () => {
 
         </div>
 
-        {weather && (
-  <div className='weather-info'>
-    <h2>{weather.name}, {weather.sys.country}</h2>
-    <h3>{weather.weather[0].main}</h3>
-    <p>{weather.weather[0].description}</p>
+        {error && <div className="alert">{error}</div>}
 
-    <h1>{weather.main.temp}°C</h1>
-    <p>Feels like {weather.main.feels_like}°C</p>
-    <p>Humidity: {weather.main.humidity}%</p>
-    <p>Wind: {weather.wind.speed} m/s</p>
-  </div>
+        {weather && (
+                  <div className='weather-info'>
+                    <h2>{weather.name}, {weather.sys.country}</h2>
+                    <h3>{weather.weather[0].main}</h3>
+                    <p>{weather.weather[0].description}</p>
+
+                    <h1>{weather.main.temp}°C</h1>
+                    <p>Feels like {weather.main.feels_like}°C</p>
+                    <p>Humidity: {weather.main.humidity}%</p>
+                    <p>Wind: {weather.wind.speed} m/s</p>
+                  </div>
 )}
-        {/* {
-        weather==null? 
-        <div>
-              <p>Current Weather</p>
-        </div>:
-        
-        <div>
-            <p>{weather.weather[0].main}  : Current Weather</p>      
-            <p>{weather.weather[0].description} : Description</p>
-            
-        </div>} */}
+      
 
     </div>
   )
