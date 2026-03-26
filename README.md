@@ -1,16 +1,46 @@
-# React + Vite
+# Weather API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A weather application that fetches real-time weather data using an external API.
 
-Currently, two official plugins are available:
+## Project Description
+This project allows users to get current weather details based on location input. It demonstrates how to integrate and fetch data from a weather API and display it in a clean and user-friendly interface. Weather APIs typically provide real-time data like temperature, humidity, and conditions ([GitHub][1])
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Link
+Live link: https://weather-api-five-virid.vercel.app/
 
-## React Compiler
+## Screenshots
+<img width="1536" height="864" alt="Screenshot (372)" src="https://github.com/user-attachments/assets/0696b2ca-c4f5-4de7-819f-a7bac5ea9432" />
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* HTML
+* CSS
+* JavaScript
+* Weather API
+* Rest API
+
+## Key Features
+
+* Fetch real-time weather data
+* Search the weather by city
+* Displays temperature, humidity, and conditions
+* Simple and responsive UI
+
+## Getting Started
+
+1. Clone the repository
+   git clone https://github.com/preethikasuburamani/WeatherAPI.git
+2. Navigate to the folder
+    cd WeatherAPI
+3. Add your API key to the script file
+4. Open `index.html` in your browser
+
+## Contact
+
+ GitHub: https://github.com/preethikasuburamani
+ LinkedIn: https://www.linkedin.com/in/preethika-subramani/
+
+Simple project to practice API integration and data handling.
+
+[1]: https://github.com/weatherapicom/weatherapi-JAVA?utm_source=chatgpt.com "GitHub - weatherapicom/weatherapi-JAVA: JAVA SDK library for WeatherAPI.com Weather API"
